@@ -12,18 +12,32 @@ function calculateProfitAndLoss(initial, quantity, current) {
   } else if (current > initial) {
     var profit = (current - initial) * quantity;
     var profitPercentage = (profit / initial) * 100;
-    showOutput(`➡️ profit is ${profit} and percentage ${profitPercentage}%`);
+    showOutput(`➡️ profit is  Rs: ${profit} and percentage is ${profitPercentage}%`);
   } else {
     showOutput("➡️ no Pain no Gain");
   }
 }
 
 function submitHandler() {
+
   var ip = Number(InitialPrice.value);
   var qty = Number(Quantity.value);
   var curr = Number(currentPrice.value);
 
-  calculateProfitAndLoss(ip, qty, curr);
+  if(ip =="" || qty=="" || curr=="") {
+
+    showOutput("please fill all input value")
+  }
+
+  else if (ip <0 || qty<0 || curr< 0){
+
+    showOutput("please enter positive value")
+  }
+
+  else {
+    calculateProfitAndLoss(ip, qty, curr);
+
+  }
 }
 
 function showOutput(message) {
