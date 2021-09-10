@@ -31,7 +31,7 @@ function submitHandler() {
 
   else if (ip <0 || qty<0 || curr< 0){
 
-    showOutput("please enter positive value")
+    showOutput("please enter positive value first")
   }
 
   else {
